@@ -17,7 +17,7 @@ CREATE TABLE products (
     name VARCHAR(255),
     brand_id INT REFERENCES brands(id) ON DELETE CASCADE,
     stock_id INT REFERENCES stocks(id) ON DELETE CASCADE,
-    description TEXT,
+    category VARCHAR(255),
     size VARCHAR(255),
     cost_price FLOAT(20),
     selling_price FLOAT(20)
