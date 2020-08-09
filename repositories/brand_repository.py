@@ -20,7 +20,7 @@ def select_all():
 def select(id):
     sql = "SELECT * FROM brands WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    result = run_sql(sql, values)[0]
     brand = Brands(result["name"], result["id"])
     return brand
 
