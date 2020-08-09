@@ -21,7 +21,7 @@ brand_2 = Brand("Airoh")
 brand_repository.save(brand_2)
 
 brand_3 = Brand("LS2")
-brand_repository.brand(brand_3)
+brand_repository.save(brand_3)
 
 brand_4 = Brand("Schuberth")
 brand_repository.save(brand_4)
