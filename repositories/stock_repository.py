@@ -33,4 +33,6 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-
+def update(stock):
+    sql = "UPDATE stocks SET qty = %s WHERE id = %s "
+    run_sql(sql, values)
