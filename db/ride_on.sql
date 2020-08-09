@@ -4,8 +4,7 @@ DROP TABLE IF EXISTS stocks;
 
 CREATE TABLE brands (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    description TEXT
+    name VARCHAR(255)
 );
 
 CREATE TABLE stocks (
