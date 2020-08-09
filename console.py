@@ -38,18 +38,18 @@ stock_repository.save(stock_3)
 stock_4 = Stock(0)
 stock_repository.save(stock_4)
 
-product_1 = Product('K1-Mir 2018', 1, 4, 'Helmet', 'L', 130.99, 169.99)
+product_1 = Product("K1-Mir 2018", 1, 4, "Helmet", "L", 130.99, 169.99)
 product_repository.save(product_1)
 
-product_2 = Product('Commander - Matt Orange Fluo ', 2, 3, 'Helmet', 'XL', 250.99, 289.99)
+product_2 = Product("Commander - Matt Orange Fluo", 2, 3, "Helmet", "XL", 250.99, 289.99)
 product_repository.save(product_2)
 
 
-product_3 = Product('Subverter - Power Chrome/Blue', 3, 1, 'Helmet', 'L', 170.99, 199.99)
+product_3 = Product("Subverter - Power Chrome/Blue", 3, 1, "Helmet", "L", 170.99, 199.99)
 product_repository.save(product_3)
 
 
-product_4 = Product('C4 - Legacy Yellow', 4, 2, 'Helmet', 'M', 319.99, 649.99)
+product_4 = Product("C4 - Legacy Yellow", 4, 2, "Helmet", "M", 319.99, 649.99)
 product_repository.save(product_4)
 
 pdb.set_trace()
