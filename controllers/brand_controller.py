@@ -29,3 +29,11 @@ def create_brand():
 def edit_brand(id):
     brand = brand_repository.select(id)
     return render_template("brands/edit.html", brand=brand)
+
+# UPDATE
+@brands_blueprint.route("/brands/<id>", methods=["POST"])
+def update_brand(id):
+    name = request.form["name"]
+    brand = Brand(name, id)
+    brand_repository.update(brand)
+    return redirect("/brands")
