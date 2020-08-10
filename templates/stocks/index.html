@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Stocks</h2>
+
+{% for stock in stocks}
+    <p>{{stock.qty}}</p>
+    <a href="/stocks/{{ stock.id }}/edit"></a>
+    <form action="/stocks/{{ stock.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+
+{% endfor %}
+{% endblock %}
