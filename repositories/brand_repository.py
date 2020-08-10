@@ -11,7 +11,7 @@ def save(brand):
 def select_all():
     brands = []
     sql = "SELECT * FROM brands"
-    results= run_sql(sql, values)
+    results= run_sql(sql)
     for result in results:
         brand = Brand(result["name"], result["id"])
         brands.append(brand)
