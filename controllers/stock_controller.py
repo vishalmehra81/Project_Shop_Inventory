@@ -15,3 +15,11 @@ def stocks():
 @stocks_blueprint.route("/stocks/new")
 def new_stock():
     return render_template("stocks/new.html")
+
+# CREATE
+@stocks_blueprint.route("/stocks", methods=["POST"])
+def create_stock():
+    qty = request.form["qty"]
+    new_stock = Stock(qty)
+    stock_repository.save(new_stock)
+    return redirect("/stocks")
