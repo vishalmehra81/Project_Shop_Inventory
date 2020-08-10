@@ -10,7 +10,7 @@
     <h3>{{ product.name }}</h3>
     <p>{{ product.brand.name }}</p>
     <a href="/products/{{ product.id }}/edit">Edit</a>
-    <form action="/products/{{ product.id }}/delete" method="POST">
+    <form action="/products/{{ product.id }}/delete" methods="POST">
         <input type="submit" value="Delete">
     </form>
     <a href="/products/{{ product.id }}">Details</a>

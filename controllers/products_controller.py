@@ -21,7 +21,7 @@ def new_product():
     return render_template("/products/new.html", brand=brand, stock=stock)
 
 # CREATE
-@products_blueprint.route("/products/", method=["POST"])
+@products_blueprint.route("/products/", methods=["POST"])
 def create_product():
     name = request.form["name"]
     brand_id = request.form["brand_id"]
