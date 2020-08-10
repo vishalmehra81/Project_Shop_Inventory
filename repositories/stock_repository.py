@@ -8,10 +8,10 @@ def save(stock):
     id = results[0]['id']
     stock.id = id
 
-def select(all):
+def select_all():
     stocks = []
     sql = "SELECT * FROM stocks"
-    results = run_sql[sql, values]
+    results = run_sql[sql]
     for result in results:
         stock = Stock(result["qty"], result["id"])
         stocks.append(stock)
