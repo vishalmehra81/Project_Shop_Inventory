@@ -37,3 +37,9 @@ def update_brand(id):
     brand = Brand(name, id)
     brand_repository.update(brand)
     return redirect("/brands")
+
+# DELETE
+@brands_blueprint.route("/brands/<id>/delete", methods=["POST"])
+def delete_brand(id):
+    brand_repository.delete(id)
+    return redirect("/brands")
