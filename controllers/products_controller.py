@@ -19,14 +19,22 @@ def new_product():
     brand = brand_repository.select_all()
     stock = stock_repository.select_all()
     return render_template("/products/new.html", brand=brand, stock=stock)
-    
 
-
-
-
-
-
-
+# CREATE
+@products_blueprint.route("/products/", method=["POST"])
+def create_product():
+    name = request.form["name"]
+    brand_id = request.form["brand_id"]
+    brand = brand_repository.select(brand_id)
+    stock_id = request.form["stock_id"]
+    stock = stock_repository.select(stock_id)
+    category = request.form["category"]
+    size = request.form["size"]
+    cost_price = request.form["cost_price"]
+    selling_price = request.form["selling_price"]
+    new_product = Product(name, brand, stock,category,size, cost_price, selling_price)
+    product_repository.save(new_product)
+    return redirect("/products")
 
 
 
@@ -34,7 +42,7 @@ def new_product():
 
 
 # DELETE
-@products_blueprint.route("/products<id>/delete", methods=["POST"]
+@products_blueprint.route("/products<id>/delete", methods=["POST"])
 def delete_product(id):
     product_repository.delete(id)
     return redirect("/products")
