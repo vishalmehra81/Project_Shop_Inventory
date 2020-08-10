@@ -10,3 +10,8 @@ stocks_blueprint = Blueprint("stocks", __name__)
 def stocks():
     stocks = stock_repository.select_all()
     return render_template("stocks/index.html", stocks=stocks)
+
+# NEW
+@stocks_blueprint.route("/stocks/new")
+def new_stock():
+    return render_template("stocks/new.html")
