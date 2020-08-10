@@ -32,14 +32,33 @@ def create_product():
     size = request.form["size"]
     cost_price = request.form["cost_price"]
     selling_price = request.form["selling_price"]
-    new_product = Product(name, brand, stock,category,size, cost_price, selling_price)
+    new_product = Product(name, brand, stock, category, size, cost_price, selling_price)
     product_repository.save(new_product)
     return redirect("/products")
 
+# EDIT
+@products_blueprint.route("/products/<id>/edit")
+def edit_product():
+    product = product_repository.select(id)
+    brand = brand_repository.select_all()
+    stock = stock_repository.select_all()
+    return render_template("products/edit.html", product=product, brand=brand, stock=stock)
 
-
-
-
+# UPDATE
+@products_blueprint.route("/products/<id>", methods=["POST"])
+def update_product(id):
+    name = request.form["name"]
+    brand_id = request.form["brand_id"]
+    brand = brand_repository.select(brand_id)
+    stock_id = request.form["stock_id"]
+    stock = stock_repository.select(stock_id)
+    category = request.form["category"]
+    size = request.form["size"]
+    cost_price = request.form["cost_price"]
+    selling_price = request.form["selling_price"]
+    product = Product(name, brand, stock, category, size, cost_price, selling_price, id)
+    product_repository.update(product)
+    return redirect("/products")
 
 # DELETE
 @products_blueprint.route("/products<id>/delete", methods=["POST"])
