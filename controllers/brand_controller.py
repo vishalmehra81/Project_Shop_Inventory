@@ -16,3 +16,10 @@ def brands():
 def new_brand():
     return render_template("brands/new.html")
 
+# CREATE
+@brands_blueprint.route("/brands", methods=["POST"])
+def create_brand():
+    name = request.form["name"]
+    new_brand = Brand(name)
+    brand_repository.save(new_brand)
+    return redirect("/brands")
