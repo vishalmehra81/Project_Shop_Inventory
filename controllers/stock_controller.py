@@ -38,3 +38,8 @@ def update_stock(id):
     stock_repository.update(stock)
     return redirect("/stocks")
 
+# DELETE
+@stocks_blueprint.route("/stocks/<id>/delete", methods=["POST"])
+def delete_stock(id):
+    stock_repository.delete(id)
+    return redirect("/stocks")
