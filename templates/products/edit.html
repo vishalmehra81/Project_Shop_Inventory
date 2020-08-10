@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update Product</h2>
+
+<form action="/products/{{ product.id }}" method="POST">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ product.name }}">
+    </div>
+        <label for="brand">Brand:</label>
+        <select name="brand_id" id="brand">
+            {% for brand in brands %}
+            <option value="{{ brand.id }}" {% if brand.id == product.brand.id %} selected {% endif %}>
+                {{ brand.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="stock">Stock:</label>
+        <select name="stock_id" id="stock">
+            {% for stock in stocks %}
+            <option value="{{ stock.id }}" {% if stock.id == product.stock.id %} selected {% endif %}>
+                {{stock.qty }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+    <div>
+        <label for="category">Category:</label>:</label>
+        <input type="text" id="category" name="category" value="{{ product.category }}">
+    </div>
+    <div>
+        <label for="size">Size:</label>
+        <input type="text" id="size" name="size" value="{{ product.size }}">
+    </div>
+    <div>
+        <label for="cost_price">Cost Price:</label>
+        <input type="text" id="cost_price" name="cost_price" value="{{ product.cost_price }}">
+    </div>
+    <div>
+        <label for="selling_price">Selling Price:</label>
+        <input type="text" id="selling_price" name="selling_price" value="{{ product.selling_price }}">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}
