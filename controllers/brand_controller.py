@@ -23,3 +23,9 @@ def create_brand():
     new_brand = Brand(name)
     brand_repository.save(new_brand)
     return redirect("/brands")
+
+# EDIT
+@brands_blueprint.route("/brands/<id>/edit")
+def edit_brand(id):
+    brand = brand_repository.select(id)
+    return render_template("brands/edit.html", brand=brand)
