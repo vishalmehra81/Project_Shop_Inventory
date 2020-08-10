@@ -29,3 +29,12 @@ def create_stock():
 def edit_stock(id):
     brand = brand_repository.select(id)
     return render_template("stocks/edit.html", stock=stock)
+
+# UPDATE
+@stocks_blueprint.route("/stocks/<id>", methods=["POST"])
+def update_stock(id):
+    qty = request.form["qty"]
+    stock = Stock(qty, id)
+    stock_repository.update(stock)
+    return redirect("/stocks")
+
