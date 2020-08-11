@@ -18,9 +18,9 @@ def select_all():
     sql = "SELECT * FROM products"
     results = run_sql(sql)
     for result in results:
-        brand = brand_repository.select[result["brand_id"]]
-        stock = stock_repository.select[result["stock_id"]]
-        product = Product(result["name"]),brand, stock, result["category"],result["size"], result["cost_price"], result["selling_price"]
+        brand = brand_repository.select(result["brand_id"])
+        stock = stock_repository.select(result["stock_id"])
+        product = Product(result["name"],brand, stock, result["category"],result["size"], result["cost_price"], result["selling_price"])
         products.append(product)
         return products
 

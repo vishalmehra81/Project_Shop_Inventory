@@ -13,7 +13,7 @@ def select_all():
     sql = "SELECT * FROM brands"
     results= run_sql(sql)
     for result in results:
-        brand = Brand(result["name"],result["distributor"], result["contact"],result["id"])
+        brand = Brand(result["name"], result["distributor"], result["contact"],result["id"])
         brands.append(brand)
     return brands
 
@@ -21,7 +21,7 @@ def select(id):
     sql = "SELECT * FROM brands WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    brand = Brands(result["name"], result["id"])
+    brand = Brand(result["name"], result["distributor"], result["contact"], result["id"])
     return brand
 
 def delete_all():

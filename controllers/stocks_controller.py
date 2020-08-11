@@ -27,7 +27,7 @@ def create_stock():
 # EDIT
 @stocks_blueprint.route("/stocks/<id>/edit")
 def edit_stock(id):
-    brand = brand_repository.select(id)
+    stock = stock_repository.select(id)
     return render_template("stocks/edit.html", stock=stock)
 
 # UPDATE

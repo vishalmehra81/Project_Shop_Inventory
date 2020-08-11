@@ -1,0 +1,7 @@
+body > header > nav > ul > li {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    background-color: darkgoldenrod;
+    text-align: center;
+}

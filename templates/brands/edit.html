@@ -3,12 +3,18 @@
 
 <h2>Update Brand</h2>
 
+
 <form action="/brand/{{ brand.id }}" method="POST">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" value="{{ brand.name }}">
+        <label for="distributor">Distributor:</label>
+        <input type="text" id="distributor" name="distributor" value="{{ brand.name }}">
+        <label for="contact">Contact:</label>
+        <input type="text" id="name" name="contact" value="{{ brand.name }}">
         <input type="submit">
     </div>
 </form>
+
 
 {% endblock %}

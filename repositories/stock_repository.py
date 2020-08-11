@@ -11,7 +11,7 @@ def save(stock):
 def select_all():
     stocks = []
     sql = "SELECT * FROM stocks"
-    results = run_sql[sql]
+    results = run_sql(sql)
     for result in results:
         stock = Stock(result["qty"], result["id"])
         stocks.append(stock)

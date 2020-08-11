@@ -20,7 +20,9 @@ def new_brand():
 @brands_blueprint.route("/brands", methods=["POST"])
 def create_brand():
     name = request.form["name"]
-    new_brand = Brand(name)
+    distributor = request.form["distributor"]
+    contact = request.form["contact"]
+    brand = Brand(name, distributor, contact, id)
     brand_repository.save(new_brand)
     return redirect("/brands")
 
@@ -34,7 +36,9 @@ def edit_brand(id):
 @brands_blueprint.route("/brands/<id>", methods=["POST"])
 def update_brand(id):
     name = request.form["name"]
-    brand = Brand(name, id)
+    distributor = request.form["distributor"]
+    contact = request.form("contact")
+    brand = Brand(name, distributor, contact, id)
     brand_repository.update(brand)
     return redirect("/brands")
 
