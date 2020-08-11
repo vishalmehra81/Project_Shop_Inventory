@@ -7,7 +7,7 @@ import repositories.stock_repository as stock_repository
 
 def save(product):
     sql = "INSERT INTO products (name, brand_id, stock_id, category, size, cost_price, selling_price) VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id"
-    values = [product.name, brand.brand.id, ß.stock.id, product.category, product.size, product.cost_price, product.selling_price]
+    values = [product.name, brand.brand.id, stock.stock.id, product.category, product.size, product.cost_price, product.selling_price]
     results = run_sql(sql, values)
     id = results[0]['id']
     product.id = id
@@ -47,3 +47,5 @@ def update(product):
     sql = "UPDATE products SET (name, brand_id, stock_id, category, size, cost_price, selling_price) VALUES (%s,%s,%s,%s,%s,%s,%s) WHERE id = %s"
     values = [product.name, brand.brand.id, stock.stock.id, product.category, product.size, product.cost_price, product.selling_price]
     run_sql(sql, values)
+
+
