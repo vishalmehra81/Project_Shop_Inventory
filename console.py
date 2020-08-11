@@ -14,8 +14,7 @@ product_repository.delete_all()
 brand_repository.delete_all()
 stock_repository.delete_all()
 
-# BRANDS
-brand_1 = Brand("AGV", "J&S Accessories Ltd", "0141 033 4080")
+brand_1 = Brand("AGV","J&S Accessories Ltd","0141 033 4080")
 brand_repository.save(brand_1)
 
 brand_2 = Brand("Airoh", "Infinity Motorcycles", "0141 288 0909") 
@@ -51,7 +50,6 @@ brand_repository.save(brand_11)
 brand_12 = Brand("Spada","Infinity Motorcycles", "0141 288 0909") 
 brand_repository.save(brand_12)
 
-# STOCKS
 stock_1 = Stock(5)
 stock_repository.save(stock_1)
 
@@ -112,8 +110,7 @@ stock_repository.save(stock_19)
 stock_20 = Stock(2)
 stock_repository.save(stock_20)
 
-# PRODUCTS
-product_1 = Product("K1-Mir 2018", brand_1, stock_1, "Helmet", "L", 130.99, 169.99)
+product_1 = Product("Atlante White/Blue/Red ", brand_1, stock_1, "Helmet", "XL", 300.99, 359.99)
 product_repository.save(product_1)
 
 product_2 = Product("Commander - Matt Orange Fluo", brand_2, stock_2, "Helmet", "XL", 250.99, 289.99)
@@ -172,5 +169,6 @@ product_repository.save(product_19)
 
 product_20 = Product("Freeride WP Glove - Tan", brand_12, stock_20, "Gloves", "L", 34.99, 45.99)
 product_repository.save(product_20)
+
 
 pdb.set_trace()

@@ -8,3 +8,4 @@ class Product:
         self.cost_price = cost_price
         self.selling_price = selling_price
         self.id = id 
+        

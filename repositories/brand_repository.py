@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.brand import Brand
 
 def save(brand):
-    sql = "INSERT INTO brands (name) VALUES (%s) RETURNING id"
-    values = [brand.name]
+    sql = "INSERT INTO brands (name, distributor, contact) VALUES (%s,%s,%s) RETURNING id"
+    values = [brand.name, brand.distributor, brand.contact]
     results = run_sql(sql, values)
     id = results[0]['id']
     brand.id = id
@@ -13,7 +13,7 @@ def select_all():
     sql = "SELECT * FROM brands"
     results= run_sql(sql)
     for result in results:
-        brand = Brand(result["name"], result["id"])
+        brand = Brand(result["name"],result["distributor"], result["contact"],result["id"])
         brands.append(brand)
     return brands
 
