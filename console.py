@@ -143,7 +143,7 @@ product_repository.save(product_9)
 product_10 = Product("Kelly Ladies Leather Trousers - Black", brand_10, stock_10, "Clothing", "M", 86.99, 119.99)
 product_repository.save(product_10)
 
-product_11 = Product(" SMX-6 v2 Drystar® Boots - Black", brand_6, stock_11, "Clothing", "M", 199.99, 219.99)
+product_11 = Product(" SMX-6 v2 Drystar® Boots - Black", brand_6, stock_11, "Boots", "M", 199.99, 219.99)
 product_repository.save(product_11)
 
 product_12 = Product("Rainseal Over Boots - Black", brand_7, stock_12, "Boots", "L", 15.99, 21.99)
@@ -158,7 +158,7 @@ product_repository.save(product_14)
 product_15 = Product("Crossfire 3 SRS Boots - Blue/Yellow", brand_11, stock_15, "Boots", "L", 250.99, 359.99)
 product_repository.save(product_15)
 
-product_16 = Product("Apex V2 Drystar® Glove - Black", brand_6, stock_16, "Boots", "M", 54.99, 84.99)
+product_16 = Product("Apex V2 Drystar® Glove - Black", brand_6, stock_16, "Gloves", "M", 54.99, 84.99)
 product_repository.save(product_16)
 
 product_17 = Product("RP-4 Gloves - Black/White", brand_7, stock_17, "Gloves", "L", 25.99, 49.99)

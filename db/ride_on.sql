@@ -15,11 +15,12 @@ CREATE TABLE stocks (
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    brand_id INT REFERENCES brands(id),
-    stock_id INT REFERENCES stocks(id),
+    brand_id SERIAL REFERENCES brands(id) ON DELETE CASCADE,
+    stock_id SERIAL REFERENCES stocks(id) ON DELETE CASCADE,
     category VARCHAR(255),
     size VARCHAR(255),
     cost_price FLOAT(20),
     selling_price FLOAT(20)
+    
 );
 
