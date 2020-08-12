@@ -6,11 +6,15 @@
 {% for brand in brands %}
 
 <section>
-    <p>{{brand.name}}</p>
-    <a href="/brands/{{ brand.id }}/edit"></a>
-    <form action="/brands/{{ brand.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
+    <div>
+      <p>{{brand.name}}</p>
+      <p>{{brand.distributor}}</p>
+      <p>{{brand.contact}}</p>
+      <a href="/brands/{{ brand.id }}/edit"></a>
+       <form action="/brands/{{ brand.id }}/delete" method="POST">
+          <input type="submit" value="Delete">
+       </form>
+    </div>
 </section>
 
 {% endfor %}

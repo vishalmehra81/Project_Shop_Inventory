@@ -6,11 +6,13 @@
 {% for stock in stocks %}
 
 <section>
-    <p>{{stock.qty}}</p>
-    <a href="/stocks/{{ stock.id }}/edit"></a>
-    <form action="/stocks/{{ stock.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
+    <div>
+      <p>{{stock.qty}}</p>
+      <a href="/stocks/{{ stock.id }}/edit"></a>
+       <form action="/stocks/{{ stock.id }}/delete" method="POST">
+          <input type="submit" value="Delete">
+       </form>
+    </div>
 </section>
 
 {% endfor %}

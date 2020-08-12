@@ -28,8 +28,8 @@ def select(id):
     sql = "SELECT * FROM products WHERE id = %s"
     values = [id]
     result = run_sql(sql,values)[0]
-    brand = brand_repository.select[result["brand_id"]]
-    stock = stock_repository.select[result["stock-id"]]
+    brand = brand_repository.select(result["brand_id"])
+    stock = stock_repository.select(result["stock-id"])
     product = Product(result["name"], brand, stock, result["category"]), result["size"], result["cost_price"], result["selling_price"]
     return product
 
