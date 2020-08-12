@@ -22,7 +22,7 @@ def create_brand():
     name = request.form["name"]
     distributor = request.form["distributor"]
     contact = request.form["contact"]
-    brand = Brand(name, distributor, contact, id)
+    new_brand = Brand(name, distributor, contact)
     brand_repository.save(new_brand)
     return redirect("/brands")
 

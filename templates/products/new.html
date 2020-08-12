@@ -3,7 +3,7 @@
 
 <h2>Add New Product</h2>
 
-<form action="/products" methods="POST">
+<form action="/products" method="POST">
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
@@ -20,13 +20,7 @@
     </div>
     <div>
         <label for="stock">Stock:</label>
-        <select name="stock_id" id="stock">
-            {% for stock in stocks %}
-            <option value="{{ stock.id }}">
-                {{ stock.qty }}
-            </option>
-            {% endfor %}
-        </select>
+           <input type="number" id="stock" name ="qty">
     </div>
     <div>
         <label for="category">Category:</label>

@@ -15,7 +15,7 @@ def select_all():
     for result in results:
         stock = Stock(result["qty"], result["id"])
         stocks.append(stock)
-        return stocks
+    return stocks
 
 def select(id):
     sql = "SELECT * FROM stocks WHERE id = %s"

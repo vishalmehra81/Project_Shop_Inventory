@@ -22,7 +22,7 @@ def select_all():
         stock = stock_repository.select(result["stock_id"])
         product = Product(result["name"],brand, stock, result["category"],result["size"], result["cost_price"], result["selling_price"])
         products.append(product)
-        return products
+    return products
 
 def select(id):
     sql = "SELECT * FROM products WHERE id = %s"
