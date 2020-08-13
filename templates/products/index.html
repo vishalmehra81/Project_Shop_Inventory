@@ -6,19 +6,47 @@
 {% for product in products %}
 
 <section>
-    <div>
-      <p>{{product.name}}</p>
-      <p>{{product.brand.name}}</p>
-      <p>{{product.stock.qty}}</p>
+    <table id="pdlst">
+       <tr>
+         <th>PRODUCT</th>
+         <th>BRAND</th>
+         <th>STOCK</th>
+         <th>CATEGORY</th>
+         <th>SIZE</th>
+         <th>COST PRICE</th>
+         <th>SELLING PRICE</th>
+      </tr>
+          <td>{{product.name}}</td>
+       
+          <td>{{product.brand.name}}</td>
+
+          <td>{{product.stock.qty}}</td>
+
+          <td>{{product.category}}</td>
+
+          <td>{{product.size}}</td>
+ 
+          <td>{{product.cost_price}}</td>
+
+         <td>{{product.selling_price}}</td>
+
+       <!-- <p>{{product.name}}</p>
+       <p>{{product.brand.name}}</p>
+       <p>{{product.stock.qty}}</p>
       <p>{{product.category}}</p>
       <p>{{product.size}}</p>
       <p>{{product.cost_price}}</p>
-      <p>{{product.selling_price}}</p>
-      <a href="/products/{{ product.id }}/edit"></a>
+      <p>{{product.selling_price}}</p> -->
+      <div>
+         <a href="/products/{{ product.id }}/edit">EDIT</a>
        <form action="/products/{{ product.id }}/delete" method="POST">
           <input type="submit" value="Delete">
        </form>
-    </div>
+      </div>
+       
+      </table>
+
+
 </section>
 
 {% endfor %}

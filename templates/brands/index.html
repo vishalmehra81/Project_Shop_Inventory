@@ -6,15 +6,23 @@
 {% for brand in brands %}
 
 <section>
-    <div>
-      <p>{{brand.name}}</p>
-      <p>{{brand.distributor}}</p>
-      <p>{{brand.contact}}</p>
-      <a href="/brands/{{ brand.id }}/edit"></a>
-       <form action="/brands/{{ brand.id }}/delete" method="POST">
+   <div>
+      <table id="bdlst">
+      <tr>
+         <th>BRAND</th>
+         <th>DISTRIBUTOR</th>
+       <th>CONTACT</th>
+      </tr>
+          <td>{{brand.name}}</td>
+          <td>{{brand.distributor}}</td>
+          <td>{{brand.contact}}</td>
+   
+         <a href="/brands/{{ brand.id }}/edit"></a>
+         <form action="/brands/{{ brand.id }}/delete" method="POST">
           <input type="submit" value="Delete">
-       </form>
-    </div>
+         </form>
+      </div>
+    
 </section>
 
 {% endfor %}
