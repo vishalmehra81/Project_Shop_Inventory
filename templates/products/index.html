@@ -1,53 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Products</h2>
-
-{% for product in products %}
+<h2>PRODUCTS</h2>
 
 <section>
-    <table id="pdlst">
-       <tr>
-         <th>PRODUCT</th>
-         <th>BRAND</th>
-         <th>STOCK</th>
-         <th>CATEGORY</th>
-         <th>SIZE</th>
-         <th>COST PRICE</th>
-         <th>SELLING PRICE</th>
-      </tr>
-          <td>{{product.name}}</td>
+
+   <table id="pdlst">
+      <thead>
+         <tr>
+            <th>PRODUCT</th>
+            <th>BRAND</th>
+            <th>STOCK</th>
+            <th>CATEGORY</th>
+            <th>SIZE</th>
+            <th>COST PRICE</th>
+            <th>SELLING PRICE</th>ß
+            <th>MARKUP PRICE</th>
+            <th>SELECT</th>
+         </tr> 
+      </thead>  
+      {% for product in products %}
+     <tbody>
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.brand.name}}</td>
+            <td>{{product.stock.qty}}</td>
+            <!-- {% if product.stock.qty < 3%}
+            <input type="highlight" value="LOW QTY">
+            {% endif %} -->
+            <td>{{product.category}}</td>
+            <td>{{product.size}}</td>
+            <td>{{product.cost_price}}</td>
+            <td>{{product.selling_price}}</td>
+            <td>{{((product.selling_price - product.cost_price )/product.cost_price) * 100}}</td>
+            <td>
+               
+               <form action="/products/{{ product.id }}/delete" method="POST">
+                  <input type = "checkbox" name = {{product.id}} value= "DELETE "/>
+                  <input type="submit" value="DELETE">
+               </form>  
+            </td>
+
+         </tr>
+        
+      </tbody>
+         <!-- <a href="/products/{{ product.id }}/edit">EDIT</a> -->
        
-          <td>{{product.brand.name}}</td>
-
-          <td>{{product.stock.qty}}</td>
-
-          <td>{{product.category}}</td>
-
-          <td>{{product.size}}</td>
- 
-          <td>{{product.cost_price}}</td>
-
-         <td>{{product.selling_price}}</td>
-
-       <!-- <p>{{product.name}}</p>
-       <p>{{product.brand.name}}</p>
-       <p>{{product.stock.qty}}</p>
-      <p>{{product.category}}</p>
-      <p>{{product.size}}</p>
-      <p>{{product.cost_price}}</p>
-      <p>{{product.selling_price}}</p> -->
-      <div>
-         <a href="/products/{{ product.id }}/edit">EDIT</a>
-       <form action="/products/{{ product.id }}/delete" method="POST">
-          <input type="submit" value="Delete">
-       </form>
-      </div>
-       
-      </table>
-
-
+            <!-- <input type="submit" value="Delete"> -->
+    
+       {% endfor %}
+      
+   </table>
 </section>
 
-{% endfor %}
 {% endblock %}
