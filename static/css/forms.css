@@ -1,4 +1,5 @@
-forms {
+form {
+    direction: flex;
     align-items: flex-end;
     flex: content;
     flex-wrap: wrap;

@@ -14,7 +14,7 @@
             <option value="{{ brand.id }}" {% if brand.id == product.brand.id %} selected {% endif %}>
                 {{ brand.name }}
             </option>
-            {% endfor %}
+            {% end for %}
         </select>
     </div>
     <div>
@@ -24,7 +24,7 @@
             <option value="{{ stock.id }}" {% if stock.id == product.stock.id %} selected {% endif %}>
                 {{stock.qty }}
             </option>
-            {% endfor %}
+            {% end for %}
         </select>
     </div>
     <div>
@@ -47,6 +47,7 @@
     <div>
         <input type="submit">
     </div>
+    </div>
 </form>
 
-{% endblock %}
+{% end block %}

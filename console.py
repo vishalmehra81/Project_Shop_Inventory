@@ -14,7 +14,7 @@ product_repository.delete_all()
 brand_repository.delete_all()
 stock_repository.delete_all()
 
-brand_1 = Brand("AGV","J&S Accessories Ltd","0141 033 4080")
+brand_1 = Brand("AGV", "J&S Accessories Ltd", "0141 033 4080")
 brand_repository.save(brand_1)
 
 brand_2 = Brand("Airoh", "Infinity Motorcycles", "0141 288 0909") 
@@ -32,10 +32,10 @@ brand_repository.save(brand_5)
 brand_6 = Brand("Alpinestars", "Dales Distribution", "0141 070 8797") 
 brand_repository.save(brand_6)
 
-brand_7 = Brand("Oxford","J&S Accessories Ltd","0141 033 4080")
+brand_7 = Brand("Oxford", "J&S Accessories Ltd", "0141 033 4080")
 brand_repository.save(brand_7)
 
-brand_8 = Brand("RST","J&S Accessories Ltd","0141 033 4080")
+brand_8 = Brand("RST", "J&S Accessories Ltd", "0141 033 4080")
 brand_repository.save(brand_8)
 
 brand_9 = Brand("Furygan", "Portman Motors", "0141 169 8564")
@@ -44,10 +44,10 @@ brand_repository.save(brand_9)
 brand_10 = Brand("Richa", "Portman Motors", "0141 169 8564")
 brand_repository.save(brand_10)
 
-brand_11 = Brand("Sidi","Infinity Motorcycles", "0141 288 0909") 
+brand_11 = Brand("Sidi", "Infinity Motorcycles", "0141 288 0909")
 brand_repository.save(brand_11)
 
-brand_12 = Brand("Spada","Infinity Motorcycles", "0141 288 0909") 
+brand_12 = Brand("Spada", "Infinity Motorcycles", "0141 288 0909")
 brand_repository.save(brand_12)
 
 stock_1 = Stock(5)

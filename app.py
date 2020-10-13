@@ -10,9 +10,11 @@ app.register_blueprint(brands_blueprint)
 app.register_blueprint(products_blueprint)
 app.register_blueprint(stocks_blueprint)
 
+
 @app.route("/")
 def main():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
